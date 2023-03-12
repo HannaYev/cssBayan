@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1.5rem;
+  scroll-behavior: smooth;
+  min-height: 1080px;
+}
+
+body {
+  height: 100%;
+}
+
+.hidecontent {
+  display: none;
+}
+
+#close {
+  display: none;
+}
+
+#plus {
+  display: none;
+}
+
+.content {
+  margin: 0 auto;
+  animation: none;
+  padding-bottom: 1.5rem;
+}
+
+.container {
+  border: 5px solid rgb(167, 168, 170);
+  border-radius: 20px;
+  background-color: rgb(227, 228, 231);
+  color: blue;
+  text-align: left;
+  max-width: 1082px;
+  margin: 20px auto;
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding-left: 60px;
+  padding-right: 60px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out all;
+}
+
+.bayan-header {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 104%;
+  text-align: left;
+  color: black;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.accordeon-item:active {
+  background-color: rgb(202, 188, 214);
+}
+
+label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+input:checked + hr + label + .content {
+  display: block;
+  webkit-animation: openItem 1s ease-out;
+  -moz-animation: openItem 1s ease-out;
+  -o-animation: openItem 1s ease-out;
+  animation: openItem 1s ease-out;
+}
+
+@keyframes ImgAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes openItem {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@media (hover: hover) {
+  .container:hover {
+    color: black;
+  }
+
+  .accordeon-item:hover > .content {
+    display: block;
+    webkit-animation: openItem 1s ease;
+    -moz-animation: openItem 1s ease;
+    -o-animation: openItem 1s ease;
+    animation: openItem 1s ease;
+  }
+
+  .container:hover input:not(:checked) + hr + label > #plus {
+    display: inline-block;
+    animation: ImgAnimation 1s ease;
+  }
+
+  .container:hover input:checked + hr + label > #close {
+    display: inline-block;
+    animation: ImgAnimation 1s ease;
+  }
+
+  .container .accordeon-item:hover > input + hr + label > #close {
+    display: inline-block;
+  }
+
+  .accordeon-item:hover > input:not(:checked) + hr + label > #plus {
+    display: none;
+  }
+}
+
+@media (max-width: 1150px) {
+  .container {
+    max-width: 800px;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .accordeon-item {
+    max-width: 620px;
+  }
+
+  html {
+    font-size: 22px;
+  }
+
+  .content {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 650px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .accordeon-item {
+    max-width: 580px;
+  }
+
+  html {
+    font-size: 20px;
+  }
+
+  .content {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 840px) {
+  .container {
+    max-width: 600px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .accordeon-item {
+    max-width: 550px;
+  }
+
+  html {
+    font-size: 18px;
+  }
+
+ }
+
+@media (max-width: 680px) {
+  .container {
+    max-width: 400px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .accordeon-item {
+    max-width: 300px;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  .content {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 417px) {
+  html {
+    font-size: 14px;
+  }
+  .container {
+    max-width: 260px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .accordeon-item {
+    max-width: 200px;
+  }
+
+  .content {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-height: 975px) {
+  html {
+    font-size: 19px;
+    max-height: 600px;
+  }
+  .container {
+    margin: 10px auto;
+  }
+
+  .bayan-header {
+    margin-top: 45px;
+    margin-bottom: 25px;
+  }
+
+  .content {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-height: 830px) {
+  html {
+    font-size: 18px;
+    max-height: 600px;
+  }
+  .container {
+    margin: 10px auto;
+  }
+
+  .bayan-header {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-height: 750px) {
+  html {
+    font-size: 14px;
+    max-height: 500px;
+  }
+  .container {
+    margin: 8px auto;
+  }
+
+  .bayan-header {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .content {
+    width: 150px;
+    height: 150px;
+  }
+}
