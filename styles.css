@@ -199,8 +199,7 @@ input:checked + hr + label + .content {
   html {
     font-size: 18px;
   }
-
- }
+}
 
 @media (max-width: 680px) {
   .container {
